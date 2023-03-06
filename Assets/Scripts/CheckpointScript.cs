@@ -19,6 +19,18 @@ public class CheckpointScript : MonoBehaviour
                 {
                     car.skor += 1000;
                     car.chId += 1;
+                    if (finishLine)
+                    {
+                        for(int i = 0; i<GameManager.instance.cars.Count; i++)
+                        {
+                            GameManager.instance.cars[i].GetComponent<RCC_CarControllerV3>().canControl = false;
+                            GameManager.instance.cars[i].GetComponent<RCC_CarControllerV3>().brakeInput = 1;
+                           
+                        }
+                        GameManager.instance.gamePanel.SetActive(false);
+                        GameManager.instance.winnerText.text = "P" + (car.id + 1).ToString() + " " + "WON!";
+                        GameManager.instance.finishPanel.SetActive(true);
+                    }
                 }
                 else
                 {
@@ -28,6 +40,7 @@ public class CheckpointScript : MonoBehaviour
                     }
 
                 }
+   
 
             }
 

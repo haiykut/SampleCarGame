@@ -153,7 +153,7 @@ public class RCC_Recorder : MonoBehaviour {
 			mode = Mode.Record;
 		} else {
 			mode = Mode.Neutral;
-			SaveRecord ();
+			//SaveRecord ();
 		}
 
 		if(mode == Mode.Record){

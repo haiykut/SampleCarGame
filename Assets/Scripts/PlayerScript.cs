@@ -26,6 +26,11 @@ public class PlayerScript : MonoBehaviour
             distance = Vector3.Distance(RaceManager.instance.checkList[chId].position, transform.position);
             cpoint = skor - distance;
         }
+        if (Input.GetKeyDown(KeyCode.R) && id == 0 && chId > 0){
+            RCC.Transport(this.GetComponent<RCC_CarControllerV3>(), RaceManager.instance.checkList[chId - 1].transform.position + new Vector3(0,2,0), Quaternion.identity);
+            transform.LookAt(RaceManager.instance.checkList[chId].transform);
+        
+        }
         orderText.text = order.ToString();
     }
 }
