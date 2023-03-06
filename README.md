@@ -1,2 +1,2 @@
 # SampleCarGame
-This repo includes an instant race positioning system and a loading manager script.
+This repo includes an instant race positioning system, a loading manager and a camera orbit effect.
