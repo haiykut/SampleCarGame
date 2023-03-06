@@ -7,7 +7,6 @@ namespace haiykut
 
     public class RaceManager : MonoBehaviour
     {
-        float controlTime;
         public static RaceManager instance;
         public List<Transform> checkList;
         public RCC_AIWaypointsContainer waypointContainer;
@@ -52,11 +51,7 @@ namespace haiykut
 
             if (startTheRace)
             {
-                controlTime += Time.deltaTime;
-                if (controlTime > 0.2f)
-                {
-                    control();
-                }
+                control();
             }
 
         }
